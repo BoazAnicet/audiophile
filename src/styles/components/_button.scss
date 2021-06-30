@@ -1,0 +1,55 @@
+.btn {
+  padding: 16px 32px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 17px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+
+  height: 48px; /////
+
+  &.one {
+    background-color: $chocolate;
+    color: $white;
+    border-radius: 1px solid transparent;
+
+    &:hover {
+      background-color: $peach;
+    }
+  }
+
+  &.two {
+    background-color: transparent;
+    color: $black;
+    border: 1px solid $black;
+
+    &:hover {
+      background-color: $black;
+      color: $white;
+    }
+  }
+
+  &.three {
+    background-color: transparent;
+    color: $grey;
+    border-radius: 1px solid transparent;
+
+    &:hover {
+      color: $chocolate;
+    }
+  }
+
+  &.a {
+    width: 100%;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,18 @@
+@import "./base/variables";
+@import "./base/base.scss";
+@import "./base/typography";
+
+@import "./components/button";
+@import "./components/best-gear";
+@import "./components/cart";
+@import "./components/categories";
+@import "./components/header";
+@import "./components/counter";
+@import "./components/form";
+@import "./components/footer";
+@import "./components/radio";
+
+@import "./pages/category";
+@import "./pages/checkout";
+@import "./pages/index";
+@import "./pages/product";

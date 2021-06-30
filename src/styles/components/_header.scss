@@ -1,0 +1,53 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 96px;
+  width: 100%;
+  background-color: transparent;
+  z-index: 10;
+
+  .links {
+    border-bottom: 1px solid rgba($white, 0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: $white;
+
+    & ul {
+      height: 96px;
+      display: flex;
+      align-items: center;
+
+      & li {
+        &:not(:last-child) {
+          margin-right: 32px;
+        }
+
+        & a {
+          color: $white;
+
+          &:hover {
+            color: $chocolate;
+          }
+        }
+      }
+
+      & h6 {
+        margin: 0;
+        font-size: 13px;
+      }
+    }
+
+    & img:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .header {
+  }
+}

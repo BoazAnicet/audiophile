@@ -1,0 +1,26 @@
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $grey;
+  width: 120px;
+  height: 48px;
+
+  & .decrementor,
+  & .incrementor {
+    color: rgba($black, 0.5);
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      cursor: pointer;
+      color: $chocolate;
+    }
+  }
+
+  & .value {
+    //
+  }
+}

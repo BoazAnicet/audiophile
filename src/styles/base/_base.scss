@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+a {
+  text-decoration: none;
+  //
+
+  &:hover {
+    //
+  }
+}
+
+// // Large devices (desktops, less than 1200px)
+// @media (max-width: 1199.98px) {
+// }
+
+// // Medium devices (tablets, less than 992px)
+// @media (max-width: 991.98px) {
+// }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 768px) {
+  .container {
+    max-width: auto;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+}
+
+// // Extra small devices (portrait phones, less than 576px)
+// @media (max-width: 575.98px) {
+// }

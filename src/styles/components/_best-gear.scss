@@ -1,0 +1,37 @@
+#best-gear {
+  margin-top: 160px;
+
+  & .content {
+    display: flex;
+    align-items: center;
+
+    & .text {
+      width: 50%;
+
+      & h2 {
+        font-weight: 400;
+        max-width: 445px;
+      }
+
+      & span {
+        color: $chocolate;
+      }
+
+      p {
+        max-width: 445px;
+        color: rgba($black, 0.5);
+      }
+    }
+
+    & .image {
+      overflow: hidden;
+      border-radius: 10px;
+      height: 588px;
+      width: 50%;
+      background-image: url("../../assets/shared/desktop/image-best-gear.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}

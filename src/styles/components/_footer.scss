@@ -1,0 +1,232 @@
+footer {
+  background-color: $black;
+  height: 400px;
+  margin-top: 160px;
+  padding-top: 70px;
+  padding-bottom: 60px;
+
+  & .heading {
+    display: flex;
+    justify-content: space-between;
+
+    & .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    & ul {
+      display: flex;
+      align-items: center;
+
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+      & li {
+        &:not(:last-child) {
+          margin-right: 32px;
+        }
+
+        & a {
+          color: $white;
+
+          &:hover {
+            color: $chocolate;
+          }
+        }
+      }
+
+      & h6 {
+        margin: 0;
+      }
+    }
+  }
+
+  & .bottom {
+    display: flex;
+    color: rgba($white, 0.7);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    & .description {
+      width: 540px;
+      margin-top: 36px;
+
+      & .copyright {
+        margin-top: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    & .socials {
+      display: flex;
+
+      & li {
+        & a:hover svg {
+          & path {
+            fill: $peach;
+          }
+        }
+
+        &:not(:last-child) {
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    height: 400px;
+    margin-top: 96px;
+    padding-top: 70px;
+    padding-bottom: 60px;
+
+    & .heading {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & .logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 36px;
+      }
+
+      & ul {
+        display: flex;
+        align-items: center;
+
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        & li {
+          &:not(:last-child) {
+            margin-right: 32px;
+          }
+        }
+
+        & h6 {
+          margin: 0;
+        }
+      }
+    }
+
+    & .bottom {
+      display: flex;
+      color: rgba($white, 0.7);
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      & .description {
+        width: 100%;
+        margin-top: 36px;
+
+        & .copyright {
+          margin-top: 56px;
+        }
+      }
+
+      & .socials {
+        & li {
+          & a:hover svg {
+            & path {
+              fill: $peach;
+            }
+          }
+
+          &:not(:last-child) {
+            margin-right: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  footer {
+    height: auto;
+    margin-top: 96px;
+    padding-top: 46px;
+    padding-bottom: 30px;
+
+    & .heading {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & .logo {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        margin-bottom: 36px;
+      }
+
+      & ul {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        & li {
+          &:not(:last-child) {
+            margin-right: 0px;
+            margin-bottom: 25px;
+          }
+        }
+
+        & h6 {
+          margin: 0;
+        }
+      }
+    }
+
+    & .bottom {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      & .description {
+        width: 100%;
+        margin-top: 36px;
+        text-align: center;
+
+        & .copyright {
+          margin-top: 54px;
+          display: flex;
+          flex-direction: column;
+
+          & div:nth-child(1) {
+            margin-bottom: 50px;
+          }
+        }
+      }
+
+      & .socials {
+        & li {
+          & a:hover svg {
+            & path {
+              fill: $peach;
+            }
+          }
+
+          &:not(:last-child) {
+            margin-right: 16px;
+          }
+        }
+      }
+    }
+  }
+}

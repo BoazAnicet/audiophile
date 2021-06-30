@@ -1,0 +1,138 @@
+#index {
+  position: relative;
+
+  & .hero {
+    height: 730px;
+    background-image: url("../../assets/home/desktop/image-hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 225px;
+
+    & .text {
+      color: $white;
+      z-index: 99;
+      max-width: 375px;
+
+      & .overline {
+        color: rgba($white, 0.5);
+        margin-bottom: 40px;
+      }
+
+      & h1 {
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 20px;
+      }
+
+      & .description {
+        color: rgba($white, 0.5);
+        margin-bottom: 40px;
+      }
+    }
+
+    & .hero-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      & img {
+        width: 100vw;
+      }
+    }
+  }
+
+  #products {
+    margin-top: 165px;
+
+    & .zx9 {
+      background-color: $chocolate;
+      border-radius: 5px;
+      height: 560px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 90px 0 140px;
+      margin-bottom: 48px;
+
+      & .text {
+        width: 349px;
+        color: $white;
+
+        & h1 {
+          font-weight: 400;
+          margin: 0;
+          margin-bottom: 20px;
+        }
+
+        & .btn {
+          margin-top: 46px;
+        }
+      }
+
+      & img {
+        bottom: -10px;
+        width: 370px;
+        margin-bottom: -130px;
+      }
+    }
+
+    & .zx7 {
+      background-image: url("../../assets/home/desktop/image-speaker-zx7.jpg");
+      border-radius: 5px;
+      height: 320px;
+      margin-bottom: 48px;
+      padding: 0 100px;
+      display: flex;
+      align-items: center;
+
+      & h3 {
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 40px;
+      }
+    }
+
+    & .yx1 {
+      border-radius: 5px;
+      height: 320px;
+      display: flex;
+
+      & .image {
+        border-radius: 5px;
+        margin-right: 30px;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      & .text {
+        padding: 0 100px;
+        display: flex;
+        align-items: center;
+        background-color: $grey;
+        border-radius: 5px;
+        width: 100%;
+
+        & h3 {
+          font-weight: 400;
+          margin: 0;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+  #index {
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  #index {
+  }
+}

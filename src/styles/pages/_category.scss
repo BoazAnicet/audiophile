@@ -1,0 +1,130 @@
+#category {
+  & .category-header {
+    background-color: $black;
+    height: 336px;
+    padding-top: 200px;
+    text-align: center;
+
+    & h2 {
+      margin: 0;
+      color: $white;
+      font-weight: 400;
+    }
+  }
+
+  & .products {
+    display: flex;
+    flex-direction: column;
+    margin-top: 160px;
+
+    & .product {
+      height: 560px;
+      display: flex;
+      align-items: center;
+
+      &:not(:first-child) {
+        margin-top: 160px;
+      }
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+
+        & .text {
+          padding: 0;
+          padding-right: 100px;
+        }
+      }
+
+      & img {
+        border-radius: 5px;
+        height: 100%;
+        width: 49%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      & .text {
+        padding-left: 100px;
+        width: 50%;
+
+        & .overline {
+          color: $chocolate;
+          margin-bottom: 32px;
+        }
+
+        & .name {
+          font-weight: 400;
+          margin-bottom: 32px;
+          max-width: 265px;
+        }
+
+        & .description {
+          color: rgba($black, 0.5);
+          margin-bottom: 60px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #category {
+    & .category-header {
+      background-color: $black;
+      height: 336px;
+      padding-top: 200px;
+      text-align: center;
+    }
+
+    & .products {
+      display: flex;
+      flex-direction: column;
+      margin-top: 160px;
+
+      & .product {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &:not(:first-child) {
+          margin-top: 160px;
+        }
+
+        &:nth-child(even) {
+          flex-direction: row;
+
+          & .text {
+            padding: 0;
+          }
+        }
+
+        & .product-image {
+          border-radius: 5px;
+          overflow: hidden;
+          width: 100%;
+
+          & img {
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+
+        & .text {
+          padding: 0;
+          width: 100%;
+
+          & h2 {
+            font-weight: 400;
+          }
+
+          & .description {
+            color: rgba($black, 0.5);
+            margin-bottom: 45px;
+          }
+        }
+      }
+    }
+  }
+}
