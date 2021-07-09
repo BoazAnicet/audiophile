@@ -9,6 +9,7 @@ const ScrollToTop = ({ history, children }) => {
     return () => {
       unlisten();
     };
+    // eslint-disable-next-line
   }, []);
 
   return <>{children}</>;

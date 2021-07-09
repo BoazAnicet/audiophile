@@ -67,61 +67,103 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
   #category {
     & .category-header {
       background-color: $black;
-      height: 336px;
-      padding-top: 200px;
+      height: 192px;
+      padding-top: 100px;
       text-align: center;
+
+      & h2 {
+        margin: 0;
+        color: $white;
+        font-weight: 400;
+        font-size: 40px;
+      }
     }
 
     & .products {
       display: flex;
       flex-direction: column;
-      margin-top: 160px;
+      margin-top: 100px;
 
       & .product {
         height: auto;
-        width: 100%;
         display: flex;
+        align-items: center;
         flex-direction: column;
+        text-align: center;
 
         &:not(:first-child) {
           margin-top: 160px;
         }
 
         &:nth-child(even) {
-          flex-direction: row;
+          flex-direction: column;
 
           & .text {
             padding: 0;
           }
         }
 
-        & .product-image {
+        & img {
           border-radius: 5px;
-          overflow: hidden;
-          width: 100%;
-
-          & img {
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-          }
+          width: 100%; //
+          object-fit: cover;
+          object-position: center;
+          margin-bottom: 50px;
         }
 
         & .text {
           padding: 0;
           width: 100%;
+          text-align: center;
 
-          & h2 {
+          & .overline {
+            color: $chocolate;
+            margin-bottom: 32px;
+          }
+
+          & .name {
             font-weight: 400;
+            max-width: 100%;
+            margin-right: 0;
+            width: 70%;
+            margin: 0 auto;
+            margin-bottom: 40px;
+            font-size: 28px;
           }
 
           & .description {
             color: rgba($black, 0.5);
-            margin-bottom: 45px;
+            margin-bottom: 60px;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 424.98px) {
+  #category {
+    & .category-header {
+      padding-top: 120px;
+
+      & h2 {
+        font-size: 28px;
+      }
+    }
+
+    & .products {
+      margin-top: 64px;
+
+      & .product {
+        & .text {
+          & .description {
+            max-width: 100%;
           }
         }
       }

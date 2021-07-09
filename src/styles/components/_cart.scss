@@ -60,3 +60,17 @@
     }
   }
 }
+
+@media (max-width: 424.98px) {
+  .cart {
+    &-content {
+      position: relative;
+      margin: 0 auto;
+      right: 0%;
+
+      & .size,
+      & .total {
+      }
+    }
+  }
+}

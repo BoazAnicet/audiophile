@@ -3,46 +3,23 @@ import data from "../data.js";
 import BestGear from "../components/BestGear";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-
 import { useParams } from "react-router";
-
 import { useMediaQuery } from "../utils/useMediaQuery";
 import Categories from "../components/Categories";
+import removeFromString from "../utils/removeFromString.js";
 
 const Category = () => {
   const { category } = useParams();
-  let isPageLT768 = useMediaQuery("(max-width: 768px)");
-  let isPageLT375 = useMediaQuery("(max-width: 375px)");
+  let isWidthLessThan475px = useMediaQuery("(max-width: 474.98px)");
+  let isWidthLessThan768px = useMediaQuery("(max-width: 767.98px)");
 
   const products = data.filter((i) => i.category === category);
 
   const renderProducts = () => {
     return products.reverse().map((p, i) => {
-      if (isPageLT375) {
-        return (
-          <Product
-            key={i}
-            newItem={p.new}
-            name={p.name}
-            description={p.description}
-            image={p.image.mobile}
-            slug={p.slug}
-          />
-        );
-      }
-
-      if (isPageLT768) {
-        return (
-          <Product
-            key={i}
-            newItem={p.new}
-            name={p.name}
-            description={p.description}
-            image={p.image.tablet}
-            slug={p.slug}
-          />
-        );
-      }
+      let image = (slug) => {
+        return removeFromString(["-speaker", "-headphones"], slug) + ".jpg";
+      };
 
       return (
         <Product
@@ -50,7 +27,13 @@ const Category = () => {
           newItem={p.new}
           name={p.name}
           description={p.description}
-          image={p.image.desktop}
+          image={
+            isWidthLessThan475px
+              ? require(`../assets/category-${category}/mobile/image-${image(p.slug)}`)
+              : isWidthLessThan768px
+              ? require(`../assets/category-${category}/tablet/image-${image(p.slug)}`)
+              : require(`../assets/category-${category}/desktop/image-${image(p.slug)}`)
+          }
           slug={p.slug}
         />
       );

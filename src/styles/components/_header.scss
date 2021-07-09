@@ -7,13 +7,24 @@
   background-color: transparent;
   z-index: 10;
 
-  .links {
+  & .links {
     border-bottom: 1px solid rgba($white, 0.1);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     color: $white;
+    height: 96px;
+
+    & .logo {
+      display: flex;
+      align-items: center;
+
+      & #menu-icon {
+        margin-right: 42px;
+        display: none;
+      }
+    }
 
     & ul {
       height: 96px;
@@ -44,10 +55,98 @@
       cursor: pointer;
     }
   }
+
+  & .menu {
+    background-color: rgba($black, 0.75);
+    height: 100vh;
+    position: absolute;
+    top: 100%;
+    width: 100vw;
+    display: none;
+    z-index: 10;
+
+    & .categories {
+      margin: 0;
+      padding-top: 130px;
+      background-color: $white;
+      height: 350px;
+
+      & .links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+
+        & .category {
+          height: 165px; //
+          padding-bottom: 22px;
+
+          & .category-img {
+            width: 90%;
+          }
+
+          & h6 {
+            color: $black;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
 }
 
-// Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
   .header {
+    & .links {
+      & .logo {
+        & #menu-icon {
+          margin-right: 42px;
+          display: block;
+        }
+      }
+
+      & ul {
+        display: none;
+      }
+    }
+
+    & .menu {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 474.98px) {
+  .header {
+    & .links {
+      & .logo {
+        & #menu-icon {
+          margin-right: 42px;
+          display: block;
+        }
+      }
+
+      & ul {
+        display: none;
+      }
+    }
+
+    & .menu {
+      & .categories {
+        padding-top: 60px;
+        height: 690px;
+        overflow: visible;
+
+        & .links {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 50px;
+
+          & .category {
+            & .category-img {
+              width: 40%;
+            }
+          }
+        }
+      }
+    }
   }
 }

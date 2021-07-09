@@ -13,22 +13,23 @@
       margin-bottom: 60px;
 
       &:hover {
+        color: $chocolate;
         cursor: pointer;
       }
     }
 
     & .content {
-      display: flex;
       width: 100%;
       align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7%;
 
       & img {
-        width: 50%;
+        width: 100%;
       }
 
       & .text {
-        margin-left: auto;
-
         max-width: 445px;
 
         & .overline {
@@ -108,8 +109,9 @@
     }
 
     & .other-products {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
 
       & .other-product {
         & h3 {
@@ -119,13 +121,11 @@
           font-weight: 400;
         }
 
-        &:not(:last-child) {
-          margin-right: 30px;
-        }
-
         & .image {
+          overflow: hidden;
           & img {
             width: 100%;
+            border-radius: 10px;
           }
         }
       }
@@ -134,12 +134,13 @@
 
   & .features {
     margin-bottom: 160px;
+
     & .container {
-      display: flex;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
 
       & div:nth-child(1) {
         // features
-        max-width: 635px;
 
         & h3 {
           margin-bottom: 40px;
@@ -174,6 +175,382 @@
           color: $chocolate;
           margin-right: 24px;
           width: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  #product-page {
+    & .category-header {
+      background-color: $black;
+      height: 97px;
+      margin-bottom: 20px;
+    }
+
+    & .product {
+      margin-bottom: 160px;
+
+      & .go-back {
+        font-size: 15px;
+        margin-bottom: 60px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      & .content {
+        width: 100%;
+        align-items: center;
+
+        & img {
+          width: 100%;
+        }
+
+        & .text {
+          width: 100%;
+
+          & .overline {
+            color: $chocolate;
+            margin-bottom: 30px;
+          }
+
+          & .name {
+            font-weight: 400;
+            margin: 0;
+            margin-bottom: 40px;
+            max-width: 265px;
+            font-size: 28px;
+            line-height: 30px;
+          }
+
+          & .description {
+            color: rgba($black, 0.5);
+            margin-bottom: 40px;
+          }
+
+          & .price {
+            font-weight: 400;
+            margin-bottom: 40px;
+          }
+
+          & .buttons {
+            display: flex;
+            align-items: center;
+
+            & .btn {
+              margin-left: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    & .gallery {
+      & .container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 184px 184px;
+        gap: 16px;
+
+        & .image {
+          border-radius: 10px;
+          overflow: hidden;
+
+          & img {
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+
+          &:nth-child(1) {
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 1;
+          }
+
+          &:nth-child(2) {
+            grid-column: 1 / span 2;
+            grid-row: 2 / span 1;
+          }
+          &:nth-child(3) {
+            grid-column: 3 / span 3;
+            grid-row: 1 / 3;
+          }
+        }
+      }
+    }
+
+    & .may-like {
+      text-align: center;
+      margin-top: 160px;
+
+      & h3 {
+        margin-bottom: 60px;
+      }
+
+      & .other-products {
+        gap: 16px;
+        & .other-product {
+          & h3 {
+            margin: 0;
+            margin-top: 40px;
+            margin-bottom: 50px;
+            font-weight: 400;
+            font-size: 23px;
+          }
+
+          & .image {
+            & img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    & .features {
+      margin-bottom: 160px;
+
+      & .container {
+        display: flex;
+        flex-direction: column;
+
+        & div:nth-child(1) {
+          // features
+          max-width: 635px;
+          margin-bottom: 120px;
+
+          & h3 {
+            margin-bottom: 40px;
+          }
+
+          & p {
+            color: rgba($black, 0.5);
+          }
+        }
+
+        & div:nth-child(2) {
+          // in the box
+          margin: 0 auto;
+          flex-direction: row;
+          align-items: baseline;
+          justify-content: space-around;
+          width: 100%;
+
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+
+          & h3 {
+            align-self: flex-start;
+            margin-bottom: 35px;
+          }
+
+          & li {
+            color: rgba($black, 0.5);
+
+            &:not(:last-child) {
+              margin-bottom: 12px;
+            }
+          }
+
+          & span {
+            color: $chocolate;
+            margin-right: 24px;
+            width: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 474.98px) {
+  #product-page {
+    & .category-header {
+      background-color: $black;
+      height: 97px;
+    }
+
+    & .product {
+      margin-bottom: 90px;
+
+      & .go-back {
+        font-size: 15px;
+        margin-bottom: 24px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      & .content {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        flex-direction: column;
+
+        & img {
+          width: 100%;
+          margin-bottom: 32px;
+        }
+
+        & .text {
+          margin-left: 0px;
+
+          max-width: 445px;
+
+          & .overline {
+            color: $chocolate;
+            margin-bottom: 30px;
+          }
+
+          & .name {
+            font-weight: 400;
+            margin: 0;
+            margin-bottom: 40px;
+            max-width: 265px;
+          }
+
+          & .description {
+            color: rgba($black, 0.5);
+            margin-bottom: 40px;
+          }
+
+          & .price {
+            font-weight: 400;
+            margin-bottom: 40px;
+          }
+
+          & .buttons {
+            display: flex;
+            align-items: center;
+
+            & .btn {
+              margin-left: 8px;
+            }
+          }
+        }
+      }
+    }
+
+    & .gallery {
+      & .container {
+        display: flex;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 1fr;
+        gap: 16px;
+        flex-direction: column;
+
+        & .image {
+          border-radius: 10px;
+          overflow: hidden;
+
+          & img {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+
+          &:nth-child(1) {
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 1;
+          }
+
+          &:nth-child(2) {
+            grid-column: 1 / span 2;
+            grid-row: 2 / span 1;
+          }
+          &:nth-child(3) {
+            grid-column: 3 / span 3;
+            grid-row: 1 / 3;
+          }
+        }
+      }
+    }
+
+    & .may-like {
+      text-align: center;
+      margin-top: 120px;
+
+      & h3 {
+        margin-bottom: 60px;
+      }
+
+      & .other-products {
+        grid-template-columns: 1fr;
+        gap: 16px;
+
+        & .other-product {
+          &:not(:last-child) {
+            margin-bottom: 48px;
+          }
+
+          & h3 {
+            margin: 32px 0;
+
+            font-weight: 400;
+            font-size: 23px;
+          }
+
+          & .image {
+            & img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    & .features {
+      margin-bottom: 90px;
+
+      & .container {
+        display: flex;
+        flex-direction: column;
+
+        & div:nth-child(1) {
+          // features
+          max-width: 635px;
+          margin-bottom: 60px;
+
+          & h3 {
+            margin-bottom: 40px;
+          }
+
+          & p {
+            color: rgba($black, 0.5);
+          }
+        }
+
+        & div:nth-child(2) {
+          // in the box
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: baseline;
+          justify-content: space-around;
+          width: 100%;
+
+          & h3 {
+            align-self: flex-start;
+            margin-bottom: 35px;
+          }
+
+          & li {
+            color: rgba($black, 0.5);
+
+            &:not(:last-child) {
+              margin-bottom: 12px;
+            }
+          }
+
+          & span {
+            color: $chocolate;
+            margin-right: 24px;
+            width: 16px;
+          }
         }
       }
     }

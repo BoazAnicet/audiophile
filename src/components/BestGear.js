@@ -17,9 +17,7 @@ const BestGear = () => {
               Audiophile the best place to buy your portable audio equipment.
             </p>
           </div>
-          <div className="image">
-            {/* <img src="/assets/shared/desktop/image-best-gear.jpg" /> */}
-          </div>
+          <div className="image" />
         </div>
       </div>
     </section>

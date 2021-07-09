@@ -14,10 +14,10 @@ const Product = () => {
   const { slug } = useParams();
   let product = data.find((el) => el.slug === slug);
   const { addProduct, cartItems } = useContext(CartContext);
+  let isWidthLessThan768px = useMediaQuery("(max-width: 767.98px)");
+  let isWidthLessThan475px = useMediaQuery("(max-width: 474.98px)");
 
   const history = useHistory();
-  // let isPageLT768 = useMediaQuery("(max-width: 768px)");
-  // let isPageLT375 = useMediaQuery("(max-width: 375px)");
   const [quantity, setQuantity] = useState(1);
 
   const renderIncludes = () => {
@@ -39,7 +39,10 @@ const Product = () => {
     product.others.map((el, i) => (
       <div className="other-product" key={i}>
         <div className="image">
-          <img src={`${el.image.desktop.default}`} alt={el.name} />
+          <img
+            src={`${isWidthLessThan768px ? el.image.tablet.default : el.image.desktop.default}`}
+            alt={el.name}
+          />
         </div>
         <h3>{el.name}</h3>
         <Link to={`/product/${el.slug}`} className="btn one">
@@ -80,10 +83,6 @@ const Product = () => {
       <main id="product-page">
         {product && (
           <>
-            {/* <section className="category-header">
-              <h2>{product.name}</h2>
-            </section> */}
-
             <div className="category-header" />
 
             <section className="product">
@@ -92,7 +91,16 @@ const Product = () => {
                   Go Back
                 </div>
                 <div className="content">
-                  <img src={product.image.desktop.default} alt={product.name} />
+                  <img
+                    src={
+                      isWidthLessThan475px
+                        ? product.image.mobile.default
+                        : isWidthLessThan768px
+                        ? product.image.tablet.default
+                        : product.image.desktop.default
+                    }
+                    alt={product.name}
+                  />
                   <div className="text">
                     {product.new && <div className="overline">NEW PRODUCT</div>}
                     <h2 className="name">{product.name}</h2>
@@ -129,13 +137,40 @@ const Product = () => {
             <section className="gallery">
               <div className="container">
                 <div className="image">
-                  <img src={product.gallery.first.desktop.default} alt={""} />
+                  <img
+                    src={
+                      isWidthLessThan475px
+                        ? product.gallery.first.mobile.default
+                        : isWidthLessThan768px
+                        ? product.gallery.first.tablet.default
+                        : product.gallery.first.desktop.default
+                    }
+                    alt={""}
+                  />
                 </div>
                 <div className="image">
-                  <img src={product.gallery.second.desktop.default} alt={""} />
+                  <img
+                    src={
+                      isWidthLessThan475px
+                        ? product.gallery.second.mobile.default
+                        : isWidthLessThan768px
+                        ? product.gallery.second.tablet.default
+                        : product.gallery.second.desktop.default
+                    }
+                    alt={""}
+                  />
                 </div>
                 <div className="image">
-                  <img src={product.gallery.third.desktop.default} alt={""} />
+                  <img
+                    src={
+                      isWidthLessThan475px
+                        ? product.gallery.third.mobile.default
+                        : isWidthLessThan768px
+                        ? product.gallery.third.tablet.default
+                        : product.gallery.third.desktop.default
+                    }
+                    alt={""}
+                  />
                 </div>
               </div>
             </section>

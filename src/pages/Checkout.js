@@ -23,11 +23,12 @@ const Checkout = () => {
   const [codChecked, setCodChecked] = useState(false);
   const eMoney = useRef(null);
   const cod = useRef(null);
+  const history = useHistory();
 
   useEffect(() => {
     let body = document.getElementById("body");
 
-    modalOpen ? (body.style = "overflow: hidden") : (body.style = "overflow: scroll");
+    modalOpen ? (body.style = "overflow-y: hidden") : (body.style = "overflow-y: scroll");
   }, [modalOpen]);
 
   useEffect(() => {
@@ -44,11 +45,6 @@ const Checkout = () => {
       setCodChecked(true);
       setEmoneyChecked(false);
     });
-
-    // return () => {
-    //   cod.current.removeEventListener("click", () => {});
-    //   eMoney.current.removeEventListener("click", () => {});
-    // };
   }, []);
 
   const renderCart = () => {
@@ -77,6 +73,9 @@ const Checkout = () => {
         <div className="checkout-header" />
 
         <div className="container">
+          <div className="go-back" onClick={() => history.goBack()}>
+            Go Back
+          </div>
           <div>
             <form onSubmit={(e) => e.preventDefault()}>
               <div className="checkout">
@@ -102,7 +101,7 @@ const Checkout = () => {
 
                 <div className="payment-details">
                   <div className="form-section-head">SHIPPING INFO</div>
-                  <div className="payment-methods">
+                  <div className="inputs payment-methods">
                     <div>Payment Method</div>
                     <div>
                       <label class="radio-container">
@@ -119,9 +118,9 @@ const Checkout = () => {
                   </div>
 
                   {eMoneyChecked ? (
-                    <div className="emoney-checked">
+                    <div className="inputs emoney-checked">
                       <InputGroup label="e-Money Number" placeholder="238521993" type="text" />
-                      <InputGroup label="e-Money Number" placeholder="6891" type="text" />
+                      <InputGroup label="e-Money PIN" placeholder="6891" type="text" />
                     </div>
                   ) : (
                     <></>
@@ -207,6 +206,8 @@ const CheckoutModal = () => {
     if (cartItems.length === 1) {
       setShowOtherItems(true);
     }
+
+    // eslint-disable-next-line
   }, []);
 
   const renderItems = () => {
@@ -249,7 +250,7 @@ const CheckoutModal = () => {
   return (
     <div className="checkout-modal">
       <div className="modal-content">
-        <img src={""} alt={"Checkmark"} />
+        <div className="checkmark-icon">&#10003;</div>
         <h3>
           Thank you
           <br />
@@ -272,7 +273,7 @@ const CheckoutModal = () => {
             )}
           </div>
           <div className="total">
-            <p>GRAND TOTAL</p>
+            <div className="grand-total">GRAND TOTAL</div>
             <div style={{ fontSize: "18px" }}>
               $ {nwc((parseFloat(total) + parseFloat((total * 0.2).toFixed(2)) + 50).toFixed(2))}
             </div>

@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
 import React from "react";
-
 import iconArrowRight from "../assets/shared/desktop/icon-arrow-right.svg";
-import imageHeadphones from "../assets/shared/desktop/image-headphones.png";
+import imageHeadphonesDesktop from "../assets/shared/desktop/image-headphones.png";
 import imageSpeakers from "../assets/shared/desktop/image-speakers.png";
 import imageEarphones from "../assets/shared/desktop/image-earphones.png";
 
-function Categories() {
+const Categories = () => {
   return (
     <section className="categories">
       <div className="container">
         <div className="links">
           <div className="category">
-            <img className="category-img" src={imageHeadphones} alt="Headphones" />
+            <img className="category-img" src={imageHeadphonesDesktop} alt="Headphones" />
             <h6>Headphones</h6>
             <Link to="/category/headphones">
               Shop <img src={iconArrowRight} alt="" />
@@ -36,6 +35,6 @@ function Categories() {
       </div>
     </section>
   );
-}
+};
 
 export default Categories;
